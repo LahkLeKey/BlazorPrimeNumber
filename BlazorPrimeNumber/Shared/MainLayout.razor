@@ -1,17 +1,29 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+<Layout>
+    <LayoutHeader>
+        <Bar Breakpoint="Breakpoint.Desktop"
+             Background="Background.Light"
+             ThemeContrast="ThemeContrast.Light">
+            <BarBrand>
+                Blazor Prime Number
+            </BarBrand>
+        </Bar>
+    </LayoutHeader>
+    <LayoutContent>
+        <Container Fluid>
             @Body
-        </article>
-    </main>
-</div>
+        </Container>
+    </LayoutContent>
+    <LayoutFooter>
+        <Paragraph>
+            By Kyle Halek 01/19/2023, for an interview with MTC on 01/20/2023 at 2pm CST
+        </Paragraph>
+    </LayoutFooter>
+</Layout>
+
+@code
+{
+    [CascadingParameter]
+    public string ActiveTab { get; set; } = "home";
+}
