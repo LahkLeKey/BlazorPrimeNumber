@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # uses GitHub's checkout action to checkout code form the master branch
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
 
     # 2) Set up the .NET CLI environment for the workflow to use.
     #    The .NET version is specified by the environment variable.
